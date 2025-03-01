@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: employee_db
+    environment:
+      SA_PASSWORD: 'Senha123@'
+      ACCEPT_EULA: 'Y'
+      MSSQL_PID: 'Developer'
+    ports:
+      - '1433:1433'
+    volumes:
+      - sql_data:/var/opt/mssql
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Senha123@ -Q 'SELECT 1' || exit 1",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ${DOCKER_REGISTRY-}employeeapi
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: employee_api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: 'Server=db,1433;Database=employeedb;User Id=sa;Password=Senha123@;TrustServerCertificate=True;'
+    ports:
+      - '8080:80'
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  sql_data:

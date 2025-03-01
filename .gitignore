@@ -1,0 +1,101 @@
+### Visual Studio ###
+## Arquivos e pastas gerados pelo IDE ##
+bin/
+obj/
+[Bb]in/[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsp
+*.vssscc
+*.vspscc
+*.njsproj
+*.msi
+*.msix
+*.msp
+*.tmp
+*.sap
+
+## Arquivos de build ##
+*.log
+*.tlog
+*.lastbuildstate
+build/
+[Cc]ache/
+artifacts/
+TestResults/
+[Bb]uild[Ll]og.*
+
+## Publicação e pacotes ##
+packages/
+*.publishproj
+*.nupkg
+*.nuget.props
+*.nuget.targets
+
+### VS Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+### Arquivos temporários ###
+*.swp
+*.swo
+*~
+*.lock
+*.tmp
+*.tmp.*
+*.bak
+*.patch
+
+### Dependências ###
+node_modules/
+jspm_packages/
+bower_components/
+
+### SO Específico ###
+.DS_Store
+Desktop.ini
+Thumbs.db
+ehthumbs*.db
+[Ll]ogs/
+
+### Configurações sensíveis ###
+# Arquivos de configuração do ASP.NET Core
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.*.json
+# Exceção para templates/exemplos
+!appsettings.example.json
+!appsettings.template.json
+!appsettings.json.template
+
+### Segredos e Certificados ###
+*.pfx
+*.key
+*.crt
+*.pem
+*.p12
+*.jks
+secrets.json
+**/Properties/launchSettings.json
+
+### Outros ###
+# Local .NET Core CLI
+.dotnet/
+# Ferramentas de cobertura de código
+coverage/
+coverage.json
+coverage.*.json
+# Arquivos de Eficiência
+.ionide/
+
+# Diretório de publicação local
+publish/
