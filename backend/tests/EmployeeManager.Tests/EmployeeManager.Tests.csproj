@@ -19,11 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\EmployeeManager.Application\EmployeeManager.Application.csproj" />
-    <ProjectReference Include="..\src\EmployeeManager.Infrastructure\EmployeeManager.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
@@ -32,6 +27,11 @@
     <Folder Include="Application\Features\Employees\Commands\DeleteEmployee\" />
     <Folder Include="Application\Features\Employees\Commands\UpdateEmployee\" />
     <Folder Include="Application\Features\Employees\Commands\ReplaceEmployee\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\EmployeeManager.Application\EmployeeManager.Application.csproj" />
+    <ProjectReference Include="..\..\src\EmployeeManager.Infrastructure\EmployeeManager.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
