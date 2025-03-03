@@ -56,7 +56,7 @@ git clone https://github.com/veiga-leandro/employee-manager.git
 Navigate to the solution directory:
 
 ```sh
-cd backend/src/EmployeeManager.API
+cd backend
 ```
 
 Update the connection string in `appsettings.json`:
@@ -70,13 +70,13 @@ Update the connection string in `appsettings.json`:
 Apply database migrations:
 
 ```sh
-dotnet ef database update --project EmployeeManager.Infrastructure --startup-project EmployeeManager.API
+dotnet ef database update --project src/EmployeeManager.Infrastructure --startup-project src/EmployeeManager.API
 ```
 
 Run the application:
 
 ```sh
-dotnet run --project EmployeeManager.API
+dotnet run --project src/EmployeeManager.API
 ```
 
 ## Building and Running with Docker
@@ -235,7 +235,7 @@ The API implements global error handling using custom middleware, which captures
 ## Troubleshooting
 
 - **Database connection errors:** Check that your connection string is correct and SQL Server is running.
-- **Migration errors:** Run `dotnet ef migrations add Initial --project EmployeeManager.Infrastructure` to create new migrations.
+- **Migration errors:** Run `dotnet ef migrations add Initial --project src/EmployeeManager.Infrastructure` to create new migrations.
 - **Authentication errors:** Verify that JWT tokens are configured correctly.
 
 ## Contributing

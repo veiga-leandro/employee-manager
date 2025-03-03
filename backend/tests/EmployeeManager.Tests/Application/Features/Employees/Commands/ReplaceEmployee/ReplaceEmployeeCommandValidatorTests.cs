@@ -26,7 +26,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.ReplaceE
                 BirthDate = DateTime.Now.AddYears(-30),
                 Role = Domain.Enums.RoleType.Admin,
                 Active = true,
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -45,7 +45,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.ReplaceE
                 BirthDate = DateTime.Now.AddYears(-30),
                 Role = Domain.Enums.RoleType.Admin,
                 Active = true,
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -64,7 +64,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.ReplaceE
                 BirthDate = DateTime.Now.AddYears(-30),
                 Role = Domain.Enums.RoleType.Admin,
                 Active = true,
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -83,7 +83,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.ReplaceE
                 BirthDate = DateTime.Now.AddYears(-30),
                 Role = Domain.Enums.RoleType.Admin,
                 Active = true,
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -102,7 +102,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.ReplaceE
                 BirthDate = DateTime.Now.AddYears(-17),
                 Role = Domain.Enums.RoleType.Admin,
                 Active = true,
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);

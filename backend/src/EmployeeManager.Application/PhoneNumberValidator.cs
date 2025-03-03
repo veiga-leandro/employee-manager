@@ -10,6 +10,9 @@ namespace EmployeeManager.Application
             RuleFor(x => x.Number)
                 .NotEmpty()
                 .Matches(@"^\+?[0-9\s]{8,15}$").WithMessage("Número inválido");
+
+            RuleFor(x => x.Type)
+                .IsInEnum().WithMessage("Type inválida.");
         }
     }
 }

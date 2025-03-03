@@ -1,5 +1,5 @@
-### Visual Studio ###
-## Arquivos e pastas gerados pelo IDE ##
+# BACKEND - .NET
+# Arquivos e pastas gerados pelo IDE
 bin/
 obj/
 [Bb]in/[Oo]bj/
@@ -18,7 +18,7 @@ obj/
 *.tmp
 *.sap
 
-## Arquivos de build ##
+# Arquivos de build
 *.log
 *.tlog
 *.lastbuildstate
@@ -28,56 +28,41 @@ artifacts/
 TestResults/
 [Bb]uild[Ll]og.*
 
-## Publicação e pacotes ##
+# Publicação e pacotes
 packages/
 *.publishproj
 *.nupkg
 *.nuget.props
 *.nuget.targets
 
-### VS Code ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/
+# Cobertura de testes específica do .NET
+*.coverage
+*.coveragexml
 
-### Arquivos temporários ###
-*.swp
-*.swo
-*~
-*.lock
-*.tmp
-*.tmp.*
-*.bak
-*.patch
+# Entity Framework
+Migrations/*.cs
+!Migrations/*Designer.cs
 
-### Dependências ###
-node_modules/
-jspm_packages/
-bower_components/
+#Ferramentas específicas
+.sonarqube/
+.sonarlint/
+.dotnet/
+.ionide/
+publish/
 
-### SO Específico ###
-.DS_Store
-Desktop.ini
-Thumbs.db
-ehthumbs*.db
-[Ll]ogs/
-
-### Configurações sensíveis ###
-# Arquivos de configuração do ASP.NET Core
+#Configurações sensíveis ASP.NET Core
 appsettings.json
 appsettings.Development.json
 appsettings.Production.json
 appsettings.Staging.json
 appsettings.*.json
-# Exceção para templates/exemplos
+
+#Exceções para templates/exemplos
 !appsettings.example.json
 !appsettings.template.json
 !appsettings.json.template
 
-### Segredos e Certificados ###
+#Segredos e Certificados
 *.pfx
 *.key
 *.crt
@@ -87,15 +72,116 @@ appsettings.*.json
 secrets.json
 **/Properties/launchSettings.json
 
-### Outros ###
-# Local .NET Core CLI
-.dotnet/
-# Ferramentas de cobertura de código
-coverage/
-coverage.json
-coverage.*.json
-# Arquivos de Eficiência
-.ionide/
+# FRONTEND - React/TypeScript
+# Dependências
+node_modules/
+jspm_packages/
+bower_components/
+.npm
+.pnp
+.pnp.js
 
-# Diretório de publicação local
-publish/
+#Arquivos de build/produção
+/frontend/build/
+/frontend/dist/
+/frontend/out/
+/frontend/.next/
+/frontend/.nuxt/
+
+# Arquivos de configuração de ambiente
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Cache
+.eslintcache
+.stylelintcache
+.parcel-cache
+.cache
+.rpt2_cache/
+.rts2cachecjs/
+.rts2cachees/
+.rts2cacheumd/
+
+# Cobertura de testes
+/frontend/coverage
+/frontend/.nyc_output
+/frontend/cypress/screenshots
+/frontend/cypress/videos
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# PWA
+/frontend/public/sw.js
+/frontend/public/workbox-*.js
+/frontend/public/worker-*.js
+/frontend/public/sw.js.map
+/frontend/public/workbox-*.js.map
+/frontend/public/worker-*.js.map
+
+# Docker
+.docker/data/
+docker-compose.override.yml
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# Sistema Operacional
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Arquivos temporários
+*.swp
+*.swo
+*~
+*.lock
+*.tmp
+.tmp.
+*.bak
+*.patch
+[Ll]ogs/

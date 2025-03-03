@@ -9,6 +9,7 @@ namespace EmployeeManager.API.DTOs.Employee
         string CPF,
         string Email,
         DateTime BirthDate,
+        Guid ManagerId,
         List<PhoneNumberResult> PhoneNumbers,
         RoleType Role,
         string Password

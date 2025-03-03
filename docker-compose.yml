@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -12,30 +11,55 @@ services:
       - '1433:1433'
     volumes:
       - sql_data:/var/opt/mssql
-    healthcheck:
-      test:
-        [
-          'CMD-SHELL',
-          "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Senha123@ -Q 'SELECT 1' || exit 1",
-        ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
+      
   app:
     image: ${DOCKER_REGISTRY-}employeeapi
     build:
-      context: .
-      dockerfile: backend/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: employee_api
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: 'Server=db,1433;Database=employeedb;User Id=sa;Password=Senha123@;TrustServerCertificate=True;'
     ports:
-      - '8080:80'
+      - '8080:8080'
     depends_on:
       db:
-        condition: service_healthy
+        condition: service_started
+        
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: employee_frontend
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://localhost:8080/api
+    ports:
+      - '3000:80'
+    depends_on:
+      - app
+    restart: unless-stopped
+    
+  frontend-dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: employee_frontend_dev
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:8080/api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
+    command: npm start
 
 volumes:
   sql_data:

@@ -49,6 +49,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.CreateEm
                 "12345678900",
                 "john.doe@example.com",
                 DateTime.Now,
+                null,
                 new List<PhoneNumberResult>(),
                 RoleType.Employee,
                 "password",
@@ -72,7 +73,8 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.CreateEm
                 "12345678900",
                 "john.doe@example.com",
                 DateTime.Now,
-                new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) },
+                null,
+                new List<PhoneNumberResult> { new PhoneNumberResult("123456789", PhoneNumberType.Mobile, true) },
                 RoleType.Employee,
                 "password",
                 RoleType.Employee

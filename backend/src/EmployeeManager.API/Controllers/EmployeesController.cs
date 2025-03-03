@@ -15,7 +15,7 @@ using System.Security.Claims;
 namespace EmployeeManager.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class EmployeesController(ILogger<EmployeesController> logger, IMediator mediator) : ControllerBase
     {
         private readonly ILogger<EmployeesController> _logger = logger;
@@ -163,6 +163,7 @@ namespace EmployeeManager.API.Controllers
                     request.CPF,
                     request.Email,
                     request.BirthDate,
+                    request.ManagerId,
                     request.PhoneNumbers,
                     request.Role,
                     request.Password,

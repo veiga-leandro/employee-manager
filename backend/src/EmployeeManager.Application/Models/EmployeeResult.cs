@@ -10,6 +10,7 @@ namespace EmployeeManager.Application.Models
         string FullName,
         string Cpf,
         string Email,
+        Guid? ManagerId,
         DateTime BirthDate,
         DateTime CreatedAt,
         DateTime? UpdatedAt,
@@ -24,14 +25,16 @@ namespace EmployeeManager.Application.Models
                 $"{employee.FirstName} {employee.LastName}",
                 employee.DocumentNumber,
                 employee.Email,
+                employee.ManagerId,
                 employee.BirthDate,
                 employee.CreatedDate,
                 employee.LastModifiedDate,
-                PhoneNumbers: employee.PhoneNumbers.Select(p => new PhoneNumberResult(p.Number, p.IsActive)).ToList(),
+                PhoneNumbers: employee.PhoneNumbers.Select(p => new PhoneNumberResult(p.Number, p.Type, p.IsActive)).ToList(),
                 employee.Role);
     }
 
     public record PhoneNumberResult(
         string Number,
+        PhoneNumberType Type,
         bool IsActive);
 }

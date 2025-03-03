@@ -10,6 +10,7 @@ namespace EmployeeManager.Application.Features.Employees.Commands.CreateEmployee
         string Cpf,
         string Email,
         DateTime BirthDate,
+        Guid? ManagerId,
         List<PhoneNumberResult> PhoneNumbers,
         RoleType Role,
         string Password,

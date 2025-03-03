@@ -14,10 +14,11 @@ namespace EmployeeManager.Application.Extensions
                 $"{employee.FirstName} {employee.LastName}",
                 employee.DocumentNumber, 
                 employee.Email, 
+                employee.ManagerId,
                 employee.BirthDate,
                 employee.CreatedDate,
                 employee.LastModifiedDate,
-                employee.PhoneNumbers.Select(p => new PhoneNumberResult(p.Number, p.IsActive)).ToList(),
+                employee.PhoneNumbers.Select(p => new PhoneNumberResult(p.Number, p.Type, p.IsActive)).ToList(),
                 employee.Role);
         }
     }

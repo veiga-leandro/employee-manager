@@ -24,7 +24,7 @@ namespace EmployeeManager.Application.Features.Employees.Commands.CreateEmployee
         {
             // Converter PhoneNumberRequest para PhoneNumber (Value Object)
             var phoneNumbers = request.PhoneNumbers
-                .Select(p => new PhoneNumber(p.Number, p.IsActive))
+                .Select(p => new PhoneNumber(p.Number, p.Type, p.IsActive))
                 .ToList();
 
             // 1. Valida se o CPF já existe

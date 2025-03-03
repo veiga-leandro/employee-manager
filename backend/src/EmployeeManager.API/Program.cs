@@ -22,6 +22,16 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuração de Serviços
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Development", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers().AddNewtonsoftJson();
 
 var configuration = new ConfigurationBuilder()
@@ -102,6 +112,8 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
 // Build
 var app = builder.Build();
+
+app.UseCors("Development");
 
 // Aplica as migrações
 using (var scope = app.Services.CreateScope())

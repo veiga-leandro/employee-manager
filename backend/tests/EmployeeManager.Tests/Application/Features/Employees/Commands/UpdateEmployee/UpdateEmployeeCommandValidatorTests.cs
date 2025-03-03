@@ -24,7 +24,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "john.doe@example.com",
                 Password = "password",
                 BirthDate = DateTime.Now.AddYears(-30),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -41,7 +41,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "invalid-email",
                 Password = "password",
                 BirthDate = DateTime.Now.AddYears(-30),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -58,7 +58,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "john.doe@example.com",
                 Password = string.Empty,
                 BirthDate = DateTime.Now.AddYears(-30),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -75,7 +75,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "john.doe@example.com",
                 Password = "short",
                 BirthDate = DateTime.Now.AddYears(-30),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -92,7 +92,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "john.doe@example.com",
                 Password = "password",
                 BirthDate = DateTime.Now.AddYears(-17),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
             };
 
             var result = _validator.TestValidate(command);
@@ -109,7 +109,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                 Email = "john.doe@example.com",
                 Password = "password",
                 BirthDate = DateTime.Now.AddYears(-30),
-                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("invalid-phone", false) }
+                PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("invalid-phone", Domain.Enums.PhoneNumberType.Mobile, false) }
             };
 
             var result = _validator.TestValidate(command);

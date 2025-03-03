@@ -73,7 +73,7 @@ namespace EmployeeManager.Tests.Application.Features.Employees.Commands.UpdateEm
                     Role = RoleType.Manager,
                     Active = true,
                     BirthDate = birthDate,
-                    PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", true) }
+                    PhoneNumbers = new List<PhoneNumberResult> { new PhoneNumberResult("123456789", Domain.Enums.PhoneNumberType.Mobile, true) }
                 }
             };
             _employeeRepositoryMock.Setup(x => x.GetByIdAsync(command.Id))

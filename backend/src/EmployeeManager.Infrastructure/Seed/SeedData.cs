@@ -18,7 +18,7 @@ namespace EmployeeManager.Infrastructure.Seed
                     "admin@empresa.com",
                     new DateTime(1990, 1, 1),
                     BCrypt.Net.BCrypt.EnhancedHashPassword("manager123", 12),
-                    new List<PhoneNumber> { new PhoneNumber("+5511999999999", true) },
+                    new List<PhoneNumber> { new PhoneNumber("+5511999999999", PhoneNumberType.Mobile, true) },
                     RoleType.Admin,
                     "UserTest");
 
