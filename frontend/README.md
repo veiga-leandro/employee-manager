@@ -27,7 +27,7 @@ git clone https://github.com/veiga-leandro/employee-manager.git
 Navigate to the solution directory:
 
 ```sh
-cd frontend
+cd employee-manager/frontend
 ```
 
 Install dependencies:

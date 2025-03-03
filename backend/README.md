@@ -1,6 +1,6 @@
 # EmployeeManager - Backend
 
-## Overview
+## 📋 Overview
 
 EmployeeManager is a .NET 8-based application designed to manage employee data. It includes features for creating, updating, deleting, and retrieving employee information. The solution is structured into multiple projects, each responsible for different aspects of the application.
 
@@ -27,7 +27,7 @@ This project contains the infrastructure services, data access configurations, a
 - **Database:** Entity Framework Core for data access.
 - **API Documentation:** Swagger/OpenAPI for interactive documentation.
 
-## Architecture
+## 🚀 Architecture
 
 The application follows Clean Architecture principles and CQRS:
 
@@ -45,7 +45,7 @@ The application follows Clean Architecture principles and CQRS:
 - Docker (optional for containerization)
 - Visual Studio 2022, VS Code, or another compatible editor
 
-### Setup
+### 🔧 Setup
 
 Clone the repository:
 
@@ -56,7 +56,7 @@ git clone https://github.com/veiga-leandro/employee-manager.git
 Navigate to the solution directory:
 
 ```sh
-cd backend
+cd employee-manager/backend
 ```
 
 Update the connection string in `appsettings.json`:
